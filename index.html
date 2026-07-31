@@ -12,12 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23D4A843'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='36' font-weight='bold' font-family='serif' fill='%231e1e1e'>GK</text></svg>">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background-color: #C8CEA6;
       color: #1e1e1e;
@@ -28,76 +23,24 @@
       -webkit-font-smoothing: antialiased;
       position: relative;
     }
-
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(%23paper)" opacity="0.06"/></svg>');
       pointer-events: none;
       z-index: 0;
     }
-
-    .wrapper {
-      position: relative;
-      z-index: 2;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', 'Cormorant Garamond', serif;
-      font-weight: 500;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 4.6rem);
-      line-height: 1.15;
-      color: #1e1e1e;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 1rem;
-      display: inline-block;
-      color: #1e1e1e;
-    }
-
-    h2::after {
-      content: '';
-      display: block;
-      width: 70%;
-      height: 2px;
-      background: linear-gradient(90deg, #B08B3A 0%, rgba(176,139,58,0.3) 100%);
-      margin-top: 6px;
-    }
-
-    .calligraphy {
-      font-family: 'Tangerine', cursive;
-      font-size: 2.5rem;
-      color: #8B6914;
-      display: block;
-      line-height: 1;
-      margin-bottom: 0.2rem;
-    }
-
-    .grid {
-      display: grid;
-      gap: 30px;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
+    .wrapper { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', 'Cormorant Garamond', serif; font-weight: 500; }
+    h1 { font-size: clamp(2.8rem, 7vw, 4.6rem); line-height: 1.15; color: #1e1e1e; }
+    h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; display: inline-block; color: #1e1e1e; }
+    h2::after { content: ''; display: block; width: 70%; height: 2px; background: linear-gradient(90deg, #B08B3A 0%, rgba(176,139,58,0.3) 100%); margin-top: 6px; }
+    .calligraphy { font-family: 'Tangerine', cursive; font-size: 2.5rem; color: #8B6914; display: block; line-height: 1; margin-bottom: 0.2rem; }
+    .grid { display: grid; gap: 30px; }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
     .card {
       background: rgba(255, 252, 245, 0.8);
       backdrop-filter: blur(12px);
@@ -109,20 +52,8 @@
       position: relative;
       background-image: radial-gradient(circle at 20% 30%, rgba(255,252,245,0.7) 0%, rgba(240,235,220,0.5) 100%);
     }
-
-    .card:hover {
-      border-color: #B08B3A;
-      box-shadow: 0 20px 35px rgba(176,139,58,0.1);
-    }
-
-    .price {
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #8B6914;
-      margin: 1rem 0;
-      font-family: 'Playfair Display', serif;
-    }
-
+    .card:hover { border-color: #B08B3A; box-shadow: 0 20px 35px rgba(176,139,58,0.1); }
+    .price { font-size: 2.2rem; font-weight: 600; color: #8B6914; margin: 1rem 0; font-family: 'Playfair Display', serif; }
     .btn {
       display: inline-block;
       background: #D4A843;
@@ -142,66 +73,18 @@
       text-align: center;
       display: inline-block;
     }
-
-    .btn:hover {
-      background: #c19a3a;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid #8B6914;
-      color: #1e1e1e;
-      box-shadow: none;
-    }
-
-    .btn-outline:hover {
-      background: rgba(139,105,20,0.1);
-    }
-
-    section {
-      padding: 80px 0;
-      position: relative;
-    }
-
-    .section-title {
-      margin-bottom: 45px;
-      text-align: center;
-    }
-
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .testimonial {
-      background: rgba(255,252,245,0.75);
-      padding: 2rem;
-      border-radius: 8px;
-      font-style: italic;
-    }
-
-    footer {
-      border-top: 1px solid rgba(176,139,58,0.4);
-      padding: 40px 0;
-      text-align: center;
-      color: #2e2e2e;
-    }
-
-    .social-links a {
-      color: #1e1e1e;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .social-links a:hover {
-      color: #8B6914;
-    }
-
+    .btn:hover { background: #c19a3a; }
+    .btn-outline { background: transparent; border: 1px solid #8B6914; color: #1e1e1e; box-shadow: none; }
+    .btn-outline:hover { background: rgba(139,105,20,0.1); }
+    section { padding: 80px 0; position: relative; }
+    .section-title { margin-bottom: 45px; text-align: center; }
+    .hero { min-height: 85vh; display: flex; align-items: center; }
+    .testimonial { background: rgba(255,252,245,0.75); padding: 2rem; border-radius: 8px; font-style: italic; }
+    footer { border-top: 1px solid rgba(176,139,58,0.4); padding: 40px 0; text-align: center; color: #2e2e2e; }
+    .social-links a { color: #1e1e1e; margin: 0 15px; text-decoration: none; font-weight: 500; }
+    .social-links a:hover { color: #8B6914; }
     .profile-photo {
-      width: 180px;
-      height: 180px;
+      width: 180px; height: 180px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #D4A843;
@@ -209,189 +92,56 @@
       margin-bottom: 20px;
     }
 
+    /* Модальные окна */
     .modal-overlay {
       display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.7);
       z-index: 1000;
-      justify-content: center;
-      align-items: center;
+      justify-content: center; align-items: center;
     }
-
-    .modal-overlay.active {
-      display: flex;
-    }
-
+    .modal-overlay.active { display: flex; }
     .modal {
       background: #faf7f2;
-      max-width: 700px;
-      width: 90%;
-      max-height: 85vh;
+      max-width: 700px; width: 90%; max-height: 85vh;
       overflow-y: auto;
       padding: 40px;
       border-radius: 8px;
       position: relative;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
-
     .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #8B6914;
+      position: absolute; top: 15px; right: 20px;
+      background: none; border: none;
+      font-size: 2rem; cursor: pointer; color: #8B6914;
     }
+    .modal h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; color: #1e1e1e; }
+    .modal h4 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: #8B6914; }
+    .modal p, .modal li { font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.8rem; color: #2e2e2e; }
+    .modal ul { padding-left: 20px; }
+    .doc-link { color: #8B6914; text-decoration: underline; cursor: pointer; }
+    .doc-link:hover { color: #B08B3A; }
 
-    .modal h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #1e1e1e;
-    }
+    /* Оплата */
+    .payment-options { display: flex; flex-wrap: wrap; gap: 30px; margin: 25px 0; align-items: center; justify-content: center; }
+    .payment-card { flex: 1 1 250px; background: #ffffff; border: 1px solid rgba(176,139,58,0.3); border-radius: 8px; padding: 25px; text-align: center; }
+    .payment-card h4 { margin-top: 0; margin-bottom: 15px; }
+    .qr-code { width: 180px; height: 180px; margin: 0 auto 15px; display: block; border: 2px solid #D4A843; border-radius: 8px; padding: 8px; background: #ffffff; }
+    .payment-link-btn { display: inline-block; background: #D4A843; color: #1e1e1e; padding: 12px 28px; font-weight: 600; border-radius: 4px; text-decoration: none; transition: 0.2s; }
+    .payment-link-btn:hover { background: #c19a3a; }
+    .requisites-box { background: #ffffff; border: 1px solid rgba(176,139,58,0.3); border-radius: 8px; padding: 20px; margin-top: 20px; font-size: 0.8rem; line-height: 1.7; text-align: center; }
+    .copy-btn { background: #8B6914; color: #fff; border: none; padding: 12px 24px; border-radius: 4px; cursor: pointer; font-weight: 600; margin-top: 10px; transition: 0.2s; font-size: 0.9rem; }
+    .copy-btn:hover { background: #6B4E0A; }
 
-    .modal h4 {
-      font-size: 1.1rem;
-      margin: 1.5rem 0 0.5rem;
-      color: #8B6914;
-    }
-
-    .modal p, .modal li {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      margin-bottom: 0.8rem;
-      color: #2e2e2e;
-    }
-
-    .modal ul {
-      padding-left: 20px;
-    }
-
-    .doc-link {
-      color: #8B6914;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    .doc-link:hover {
-      color: #B08B3A;
-    }
-
-    .payment-options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin: 25px 0;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .payment-card {
-      flex: 1 1 250px;
-      background: #ffffff;
-      border: 1px solid rgba(176,139,58,0.3);
-      border-radius: 8px;
-      padding: 25px;
-      text-align: center;
-    }
-
-    .payment-card h4 {
-      margin-top: 0;
-      margin-bottom: 15px;
-    }
-
-    .qr-code {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 15px;
-      display: block;
-      border: 2px solid #D4A843;
-      border-radius: 8px;
-      padding: 8px;
-      background: #ffffff;
-    }
-
-    .payment-link-btn {
-      display: inline-block;
-      background: #D4A843;
-      color: #1e1e1e;
-      padding: 12px 28px;
-      font-weight: 600;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-
-    .payment-link-btn:hover {
-      background: #c19a3a;
-    }
-
-    .requisites-box {
-      background: #ffffff;
-      border: 1px solid rgba(176,139,58,0.3);
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 20px;
-      font-size: 0.8rem;
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    .copy-btn {
-      background: #8B6914;
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 600;
-      margin-top: 10px;
-      transition: 0.2s;
-      font-size: 0.9rem;
-    }
-
-    .copy-btn:hover {
-      background: #6B4E0A;
-    }
-
-    .consent-block {
-      text-align: left;
-      margin-bottom: 15px;
-      font-size: 0.8rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .consent-block input[type="checkbox"] {
-      margin-top: 3px;
-      accent-color: #8B6914;
-      min-width: 16px;
-      height: 16px;
-    }
-
-    .consent-block label {
-      cursor: pointer;
-      color: #2e2e2e;
-    }
+    /* Чекбокс согласия */
+    .consent-block { text-align: left; margin-bottom: 15px; font-size: 0.8rem; display: flex; align-items: flex-start; gap: 8px; }
+    .consent-block input[type="checkbox"] { margin-top: 3px; accent-color: #8B6914; min-width: 16px; height: 16px; }
+    .consent-block label { cursor: pointer; color: #2e2e2e; }
 
     @media (max-width: 768px) {
-      section {
-        padding: 55px 0;
-      }
-      .profile-photo {
-        width: 140px;
-        height: 140px;
-      }
-      .modal {
-        padding: 25px;
-      }
+      section { padding: 55px 0; }
+      .profile-photo { width: 140px; height: 140px; }
+      .modal { padding: 25px; }
     }
   </style>
 </head>
@@ -554,7 +304,7 @@
     <h4>1. Сбор и обработка персональных данных</h4>
     <p><strong>1.1.</strong> Исполнитель собирает и обрабатывает следующие данные: имя, адрес электронной почты, ник в мессенджере (по желанию), платёжные данные (в объёме, необходимом для проведения транзакции через партнёрские платёжные сервисы).</p>
     <p><strong>1.2.</strong> Обработка осуществляется в целях: оказания оплаченных услуг, информирования о расписании, направления чеков и материалов, улучшения качества сервиса.</p>
-    <p><strong>1.3.</strong> Правовым основанием обработки является: согласие Пользователя (ст. 6 ФЗ «О персональных данных»), акцепт публичной оферты, исполнение договора. Основанием обработки также является согласие Пользователя, выражаемое путём проставления отметки «Согласен на обработку персональных данных» при переходе в мессенджер для связи.</p>
+    <p><strong>1.3.</strong> Правовым основанием обработки является: согласие Пользователя (ст. 6 ФЗ «О персональных данных»), акцепт публичной оферты, исполнение договора.</p>
     <h4>2. Хранение и защита данных</h4>
     <p><strong>2.1.</strong> Данные хранятся на защищённых серверах и в CRM-системах с ограниченным доступом. Срок хранения — не дольше, чем требуется для целей обработки, но не менее 3 лет в соответствии с бухгалтерскими требованиями для самозанятых.</p>
     <p><strong>2.2.</strong> Исполнитель не передаёт данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ, и платёжным партнёрам исключительно в целях проведения оплаты.</p>
@@ -567,4 +317,58 @@
     <p><strong>5.1.</strong> Политика может быть изменена Исполнителем в одностороннем порядке. Актуальная версия всегда доступна на сайте.</p>
     <p><strong>5.2.</strong> Вопросы по Политике конфиденциальности направляйте на e-mail: gorki2002@mail.ru.</p>
     <p><em>Дата публикации: 29.07.2026.</em></p>
- 
+  </div>
+</div>
+
+<script>
+  let currentAmount = '';
+
+  function openModal(type) {
+    document.getElementById('modal-' + type).classList.add('active');
+  }
+
+  function closeModal(type) {
+    document.getElementById('modal-' + type).classList.remove('active');
+  }
+
+  function openPayment(service, amount) {
+    currentAmount = amount;
+    document.getElementById('payment-service-name').textContent = service;
+    document.getElementById('payment-amount').textContent = amount + ' ₽';
+    document.getElementById('modal-payment').classList.add('active');
+  }
+
+  function copyRequisites() {
+    const text = `Получатель: Горячева Карина Владимировна
+Счёт: 4081 7810 6000 4790 7392
+БИК: 044 525 974
+Банк: АО "ТБанк"
+Корр. счёт: 3010 1810 1452 5000 0974
+ИНН: 7710 1406 79
+КПП: 771 301 001
+Договор: 5535 6258 90
+Сумма: ${currentAmount} ₽
+Назначение: Перевод средств по договору №5535 6258 90 Горячева Карина Владимировна НДС не облагается`;
+
+    navigator.clipboard.writeText(text).then(function() {
+      alert('✅ Реквизиты скопированы в буфер обмена. Вставьте их в приложение вашего банка (Ctrl+V или «Вставить»).');
+    }).catch(function() {
+      alert('Не удалось скопировать реквизиты автоматически. Пожалуйста, воспользуйтесь оплатой по QR-коду или картой.');
+    });
+  }
+
+  function checkConsentAndOpenTelegram() {
+    const consent = document.getElementById('privacy-consent');
+    if (!consent.checked) {
+      consent.style.outline = '2px solid #cc3333';
+      alert('Пожалуйста, подтвердите согласие на обработку персональных данных.');
+      return;
+    }
+    consent.style.outline = 'none';
+    window.open('https://t.me/KarinaGKIO', '_blank');
+  }
+
+  document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
