@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -361,6 +360,40 @@
       background: #6B4E0A;
     }
 
+    /* Новые стили */
+    .badge {
+      display: inline-block;
+      background: rgba(212,168,67,0.2);
+      border: 1px solid #D4A843;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8B6914;
+      margin: 5px;
+    }
+
+    .consent-block {
+      text-align: left;
+      margin-bottom: 15px;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .consent-block input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: #8B6914;
+      min-width: 16px;
+      height: 16px;
+    }
+
+    .consent-block label {
+      cursor: pointer;
+      color: #2e2e2e;
+    }
+
     @media (max-width: 768px) {
       section {
         padding: 55px 0;
@@ -396,6 +429,10 @@
         <p>С 2020 года веду учеников из России, Казахстана, Грузии, Армении и Китая. Создаю пространство, где язык перестаёт быть барьером и становится частью жизни.</p>
         <div style="margin-top: 25px; background: rgba(176,139,58,0.15); padding: 16px; border-radius: 6px;">
           🎓 Кембриджские сертификаты FCE, B2 — международное подтверждение уровня.
+        </div>
+        <div style="margin-top: 15px;">
+          <span class="badge">🧾 Самозанятая</span>
+          <span class="badge">📄 Чек предоставляю</span>
         </div>
       </div>
     </div>
@@ -441,7 +478,11 @@
     </div>
     <div style="max-width: 450px; margin: 40px auto; text-align: center;">
       <p style="margin-bottom: 20px; font-size: 1.1rem;">Есть вопросы? Напишите мне напрямую:</p>
-      <a href="https://t.me/KarinaGKIO" target="_blank" class="btn" style="width:100%; display:block;">✈️ Написать в Telegram*</a>
+      <div class="consent-block">
+        <input type="checkbox" id="privacy-consent">
+        <label for="privacy-consent">Я согласен на обработку персональных данных и принимаю условия <span class="doc-link" onclick="openModal('privacy')">Политики конфиденциальности</span></label>
+      </div>
+      <a href="https://t.me/KarinaGKIO" target="_blank" class="btn" style="width:100%; display:block;" onclick="if(!document.getElementById('privacy-consent').checked){ alert('Пожалуйста, подтвердите согласие на обработку персональных данных.'); return false; }">✈️ Написать в Telegram*</a>
     </div>
   </section>
 
