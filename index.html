@@ -6,7 +6,7 @@
   <title>Karina Goriacheva | английский с глубиной и теплом</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Raleway:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Raleway:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Favicon GK -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%23D4A843'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-size='36' font-weight='bold' font-family='serif' fill='%231e1e1e'>GK</text></svg>">
@@ -74,6 +74,8 @@
       height: 2px;
       background: linear-gradient(90deg, #B08B3A 0%, rgba(176,139,58,0.3) 100%);
       margin-top: 6px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .calligraphy {
@@ -168,10 +170,25 @@
       text-align: center;
     }
 
+    /* Шапка сайта — по центру */
     .hero {
       min-height: 85vh;
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      margin: 1.8rem auto 2rem;
+      max-width: 600px;
     }
 
     .testimonial {
@@ -188,11 +205,22 @@
       color: #2e2e2e;
     }
 
+    /* Соцсети — по центру */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
     .social-links a {
       color: #1e1e1e;
-      margin: 0 15px;
       text-decoration: none;
       font-weight: 500;
+      text-align: center;
     }
 
     .social-links a:hover {
@@ -360,7 +388,34 @@
       background: #6B4E0A;
     }
 
-    /* Новые стили */
+    /* Упрощённые стили для документов */
+    .doc-item {
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid rgba(176,139,58,0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      transition: all 0.3s;
+    }
+
+    .doc-item:hover {
+      border-color: #B08B3A;
+      box-shadow: 0 10px 25px rgba(176,139,58,0.15);
+    }
+
+    .doc-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .doc-item p {
+      font-size: 0.8rem;
+      color: #2e2e2e;
+      margin: 0;
+    }
+
     .badge {
       display: inline-block;
       background: rgba(212,168,67,0.2);
@@ -394,6 +449,18 @@
       color: #2e2e2e;
     }
 
+    /* Элегантный подвал вместо Tangerine */
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.6rem;
+      color: #8B6914;
+      margin-top: 20px;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
     @media (max-width: 768px) {
       section {
         padding: 55px 0;
@@ -405,17 +472,21 @@
       .modal {
         padding: 25px;
       }
+      .footer-tagline {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
 <body>
 <div class="wrapper">
 
+  <!-- Шапка сайта, выровнена по центру -->
   <section class="hero">
-    <div>
+    <div class="hero-content">
       <span class="calligraphy">Karina Goriacheva</span>
       <h1>Английский —<br>разговор с миром.</h1>
-      <p style="font-size: 1.3rem; margin: 1.8rem 0 2rem; border-left: 4px solid #B08B3A; padding-left: 20px; max-width: 600px;">Индивидуальные онлайн-уроки с тёплым, интеллигентным подходом.</p>
+      <p class="hero-subtitle">Индивидуальные онлайн-уроки с тёплым, интеллигентным подходом.</p>
       <a href="#pricing" class="btn">Пробный урок — 800 ₽</a>
     </div>
   </section>
@@ -434,6 +505,49 @@
           <span class="badge">🧾 Самозанятая</span>
           <span class="badge">📄 Чек предоставляю</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок: Образование и сертификаты -->
+  <section>
+    <div class="section-title"><h2>Образование и сертификаты</h2></div>
+    <div class="grid grid-3">
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/nostrifikaciya.jpg" alt="Диплом о высшем образовании">
+        <p>Диплом о высшем образовании (нострификация)</p>
+      </div>
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/diplom_english.jpg" alt="Диплом о профпереподготовке (английский)">
+        <p>Диплом о проф. переподготовке (учитель английского)</p>
+      </div>
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/diplom_chinese.jpg" alt="Диплом о профпереподготовке (китайский)">
+        <p>Диплом о проф. переподготовке (учитель китайского)</p>
+      </div>
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/fce_b1.jpg" alt="Кембриджский сертификат FCE B1">
+        <p>Кембриджский сертификат FCE (B1)</p>
+      </div>
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/riviera_certificate.jpg" alt="Сертификат школы Riviera">
+        <p>Сертификат летнего обучения в школе Riviera (Англия)</p>
+      </div>
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/yale_negotiation.jpg" alt="Сертификат Йельского университета">
+        <p>Сертификат Йельского университета (Introduction to Negotiation)</p>
+      </div>
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/ccn_summer.jpg" alt="CCN Summer Program">
+        <p>CCN Summer Program (Китай)</p>
+      </div>
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/bfu_philosophy.png" alt="Сертификат БФУ Философия">
+        <p>Сертификат БФУ им. Канта (Основы философии)</p>
+      </div>
+      <div class="doc-item">
+        <img src="https://karinagk.github.io/gkio/images/bfu_ritorika.png" alt="Сертификат БФУ Риторика">
+        <p>Сертификат БФУ им. Канта (Риторика)</p>
       </div>
     </div>
   </section>
@@ -493,7 +607,7 @@
       <span class="doc-link" onclick="openModal('privacy')">Политика конфиденциальности</span>
     </p>
     <p style="font-size: 0.7rem; color: #888; margin-top: 10px;">* Принадлежит организации, признанной экстремистской и запрещённой на территории РФ.</p>
-    <p style="font-family: 'Tangerine', cursive; font-size: 1.8rem; margin-top: 15px;">Спокойствие, интеллект, традиция.</p>
+    <p class="footer-tagline">Спокойствие, интеллект, традиция.</p>
   </footer>
 </div>
 
